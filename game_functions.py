@@ -188,7 +188,7 @@ def check_aliens_bottom(ai_settings, screen, stats, sb, ship, aliens, bullets):
     for alien in aliens.sprites():
         if alien.rect.bottom >= screen_rect.bottom:
             #Treat this the same as if the ship got hit
-            ship_hit(ai_settings, stats, screen, sb, ship, aliens, bullets)
+            ship_hit(ai_settings, screen, stats, sb, ship, aliens, bullets)
             break 
 
 def update_aliens(ai_settings, screen, stats, sb, ship, aliens, bullets):
@@ -201,9 +201,9 @@ def update_aliens(ai_settings, screen, stats, sb, ship, aliens, bullets):
 
     #Look for alien-ship collisions
     if pygame.sprite.spritecollideany(ship, aliens):
-        ship_hit(ai_settings, stats, screen, sb, ship, aliens, bullets)
+        ship_hit(ai_settings, screen, stats, sb, ship, aliens, bullets)
     #Look for aliens hitting the bottom of screen
-    check_aliens_bottom(ai_settings, stats, sb, screen, ship, aliens, bullets)
+    check_aliens_bottom(ai_settings, screen, stats, sb, ship, aliens, bullets)
 
 def check_high_score(stats, sb):
     """Check to see if there's a new high score"""
